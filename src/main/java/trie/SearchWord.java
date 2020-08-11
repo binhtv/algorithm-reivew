@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SearchWord {
-    public static void main(String...strings) {
+    public static void main(String... strings) {
         String[] keys = new String[] {"mobile","mouse","moneypot","monitor","mousepad"};
         String searchWord = "mouse";
 
