@@ -1,9 +1,6 @@
 package topology.sort;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Kahn's algorithm
@@ -66,7 +63,44 @@ public class TopologySort {
         return result;
     }
 
+    /**
+     * Maintain 2 array revisit and visited with the size is number of vertices
+     * Go through all vertices, at every unvisited vertex
+     *  If it is visited return false, if it is in revisit return true -> the graph contains cycle
+     *  Else mark it as visited and put it in revisit array then call the recursion on all its adjacent vertices
+     * Rollback the revisit of the current vertex to false
+     * @return boolean true if the graph contains cycle otherwise false
+     */
     public boolean isCyclic() {
+        boolean[] visited = new boolean[n];
+        boolean[] revisit = new boolean[n];
+        for(int i = 0; i < n; i++) {
+            if(checkCyclic(i, visited, revisit)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean checkCyclic(int current, boolean[] visited, boolean[] revisit) {
+        if(revisit[current]) {
+            return true;
+        }
+
+        if(visited[current]) {
+            return false;
+        }
+
+        revisit[current] = true;
+        visited[current] = true;
+        for(int v : this.graph[current]) {
+            if(checkCyclic(v, visited, revisit)) {
+                return true;
+            }
+        }
+        revisit[current] = false;
+
         return false;
     }
 
@@ -78,7 +112,8 @@ public class TopologySort {
         g.addEdge(4, 1);
         g.addEdge(2, 3);
         g.addEdge(3, 1);
-
+        //g.addEdge(1, 2);
+        System.out.println(g.isCyclic());
         System.out.println(g.topologySort());
     }
 }
