@@ -1,6 +1,5 @@
 package most.visited.website;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class MostVisitedWebsite {
