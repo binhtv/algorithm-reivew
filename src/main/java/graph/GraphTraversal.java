@@ -1,10 +1,10 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-import java.util.stream.Collectors;
+import java.util.*;
 
+/**
+ * For Connected graph only
+ */
 public class GraphTraversal {
     private int n;
     private List<Integer>[] graph;
@@ -53,6 +53,27 @@ public class GraphTraversal {
         }
     }
 
+    public List<Integer> bfs() {
+        List<Integer> result = new ArrayList<>();
+        int[] visited = new int[n];
+        Queue<Integer> queue = new ArrayDeque<>();
+        visited[0] = 1;
+        result.add(0);
+        queue.offer(0);
+        while (!queue.isEmpty()) {
+            int curr = queue.poll();
+            for (int i : graph[curr]) {
+                if (visited[i] == 0) {
+                    visited[i] = 1;
+                    result.add(i);
+                    queue.offer(i);
+                }
+            }
+        }
+
+        return result;
+    }
+
     public static void main(String... strings) {
         int n = 10;
         GraphTraversal graphTraversal = new GraphTraversal(n);
@@ -68,10 +89,12 @@ public class GraphTraversal {
         graphTraversal.addEdge(5, 8);
         graphTraversal.addEdge(7, 9);
         graphTraversal.addEdge(8, 9);
-        System.out.println(graphTraversal.dfs().stream().map(v -> String.valueOf(v)).collect(Collectors.joining(" -> ")));
+        System.out.println(graphTraversal.dfs());
         List<Integer> result = new ArrayList<>();
         int[] visited = new int[n];
         graphTraversal.dfs(0, visited, result);
-        System.out.println(result.stream().map(v -> String.valueOf(v)).collect(Collectors.joining(" -> ")));
+        System.out.println(result);
+        System.out.println(graphTraversal.bfs());
+
     }
 }
