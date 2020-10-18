@@ -1,19 +1,11 @@
 package tree;
 
+import tree.common.TreeNode;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class BuildTreePostOrder {
-
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-    }
 
     private int idx = 0;
     private Map<Integer, Integer> lookup = new HashMap<>();
@@ -29,9 +21,9 @@ public class BuildTreePostOrder {
 
         TreeNode node = new TreeNode(postorder[idx--]);
 
-        int rIndex = lookup.get(node.val);
-        node.right = build(postorder, rIndex + 1, end);
-        node.left = build(postorder, start, rIndex - 1);
+        int rIndex = lookup.get(node.getVal());
+        node.setRight(build(postorder, rIndex + 1, end));
+        node.setLeft(build(postorder, start, rIndex - 1));
 
         return node;
     }

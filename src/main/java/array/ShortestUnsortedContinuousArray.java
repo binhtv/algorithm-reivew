@@ -40,7 +40,7 @@ public class ShortestUnsortedContinuousArray {
 
         return r > l ? r - l + 1 : 0;
     }
-    
+
     public static void main(String... strings) {
         int[] nums1 = new int[]{2, 6, 4, 8, 10, 9, 15};
         int[] nums = new int[]{2, 6, 4, 8, 10, 9, 5, 3, 7, 9, 1, 15};
