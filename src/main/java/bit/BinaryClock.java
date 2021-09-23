@@ -1,7 +1,21 @@
 package bit;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 /**
  * A binary watch has 4 LEDs on the top which represent the hours (0-11), and the 6 LEDs on the bottom represent the minutes (0-59).
@@ -55,8 +69,58 @@ public class BinaryClock {
         return tmp == num;
     }
 
+    private boolean filterNonNullTitle(JsonElement e) {
+        JsonObject obj = e.getAsJsonObject();
+        return Objects.nonNull(obj.get("title")) || Objects.nonNull(obj.get("story_title"));
+    }
+
+    private String getTitle(JsonElement e) {
+        JsonObject obj = e.getAsJsonObject();
+        if(!obj.get("title").isJsonNull()) {
+            return obj.get("title").getAsString();
+        } else if(!obj.get("story_title").isJsonNull()) {
+            return obj.get("story_title").getAsString();
+        }
+
+        return null;
+    }
+
+    public String[] getTitles(String author) {
+//        String response;
+        int startPage = 1;
+        int totalPages = Integer.MAX_VALUE;
+        List<String> titles = new ArrayList<>();
+        while (startPage <= totalPages) {
+            try {
+                URL obj = new URL("https://jsonmock.hackerrank.com/api/articles?author=" + author + "&page=" + startPage);
+                HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+                con.setRequestMethod("GET");
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String response = in.lines().collect(Collectors.joining());
+//                while ((response = in.readLine()) != null) {
+//                }
+                {
+                    JsonObject convertedObject = new Gson().fromJson(response, JsonObject.class);
+                    totalPages = convertedObject.get("total_pages").getAsInt();
+                    JsonArray data = convertedObject.getAsJsonArray("data");
+                    titles.addAll(StreamSupport.stream(data.spliterator(), false).map(this::getTitle).filter(Objects::nonNull).collect(Collectors.toList()));
+                }
+                in.close();
+                startPage++;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+        }
+//        Collections.sort(titles);
+
+        return titles.toArray(new String[0]);
+    }
+
     public static void main(String... strings) {
-        System.out.println("Test");
-        System.out.println(solve(5));
+        long start = System.currentTimeMillis();
+//        new BinaryClock().getTitles("coloneltcb");
+        new BinaryClock().getTitles("saintamh");
+        System.out.println(System.currentTimeMillis() - start);
     }
 }
