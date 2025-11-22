@@ -1,3 +1,5 @@
+package test.java;
+
 import lombok.NonNull;
 import org.junit.Test;
 

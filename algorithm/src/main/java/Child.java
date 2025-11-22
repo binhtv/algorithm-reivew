@@ -1,3 +1,6 @@
+package main.java;
+
+
 public class Child extends FileSystem {
     public static void staticFunction() {
         System.out.println("child");

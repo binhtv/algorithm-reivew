@@ -1,3 +1,5 @@
+package main.java;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package other.amazonwarehouse;
+package main.java.other.amazonwarehouse;
 
 import java.util.*;
 import java.util.concurrent.ExecutorService;
@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
  * // Output - [(“ITEM_1”, 19), (“ITEM_2”, 12), (“ITEM_3”, 18), (“ITEM_4”, 15)]
  */
 public class AmazonWarehouseProgram {
-    private Queue<Order> orders;
+    private Queue<other.amazonwarehouse.Order> orders;
     private Map<String, Integer> itemCounts;
     private int windowSize;//In hours
 
@@ -39,14 +39,14 @@ public class AmazonWarehouseProgram {
         this.windowSize = windowSize;
     }
 
-    public void stream(Order order) {
+    public void stream(other.amazonwarehouse.Order order) {
         orders.offer(order);
         itemCounts.put(order.getSku(), itemCounts.getOrDefault(order.getSku(), 0) + order.getCount());
     }
 
     public void cleanup() {
         while(!orders.isEmpty()) {
-            Order order = orders.peek();
+            other.amazonwarehouse.Order order = orders.peek();
             long diff = System.currentTimeMillis() - order.getTimestamp();
             long hours = diff / (1000*60*60*60);
             if(hours <= 6) {
@@ -72,7 +72,7 @@ public class AmazonWarehouseProgram {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                warehouse.stream(new Order("SKU1", 10, System.currentTimeMillis()));
+                warehouse.stream(new other.amazonwarehouse.Order("SKU1", 10, System.currentTimeMillis()));
             }
         });
         executor.execute(() -> {
@@ -82,8 +82,8 @@ public class AmazonWarehouseProgram {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                warehouse.stream(new Order("SKU2", 5, System.currentTimeMillis()));
-                warehouse.stream(new Order("SKU1", 1, System.currentTimeMillis()));
+                warehouse.stream(new other.amazonwarehouse.Order("SKU2", 5, System.currentTimeMillis()));
+                warehouse.stream(new other.amazonwarehouse.Order("SKU1", 1, System.currentTimeMillis()));
             }
         });
 

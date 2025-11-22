@@ -1,4 +1,4 @@
-package other.mostusedresource;
+package main.java.other.mostusedresource;
 
 import java.util.Comparator;
 

@@ -1,4 +1,4 @@
-package sorting.quicksort;
+package main.java.sorting.quicksort;
 
 import java.util.Arrays;
 import java.util.Comparator;
