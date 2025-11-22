@@ -1,0 +1,23 @@
+{
+  "company": "ABC",
+  "employees": [
+    {
+      "id": 1,
+      "name": "John",
+      "title": "SE",
+      "address": {
+        "no": "1234",
+        "street": "abc"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Joe",
+      "title": "HR",
+      "address": {
+        "no": "1234",
+        "street": "abc"
+      }
+    }
+  ]
+}
