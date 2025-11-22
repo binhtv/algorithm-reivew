@@ -1,9 +1,9 @@
-package find.union;
+package main.java.find.union;
 
 import java.util.*;
 
 public class FindUnion {
-    private int[] ids;
+    private final int[] ids;
 
     public FindUnion(int n) {
         ids = new int[n];
