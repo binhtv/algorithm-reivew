@@ -1,4 +1,4 @@
-package array;
+package main.java.array;
 
 /**
  * You and your fiend are gardeners, and you take care of your plants. The plants are plated in a row, and each of them
