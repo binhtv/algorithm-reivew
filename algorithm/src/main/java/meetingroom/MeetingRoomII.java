@@ -1,4 +1,4 @@
-package meetingroom;
+package main.java.meetingroom;
 
 import java.util.*;
 
@@ -44,7 +44,7 @@ public class MeetingRoomII {
 
         Queue<List<String>> priorityQueue = new PriorityQueue<>((l1, l2) -> {
            if(l1.size() == l2.size()) {
-               return l1.get(0).compareTo(l2.get(0));
+               return l1.getFirst().compareTo(l2.getFirst());
            } else {
                return l2.size() - l1.size();
            }

@@ -1,4 +1,4 @@
-package string.palindrom;
+package main.java.string.palindrom;
 
 public class LongestPalindromicSubstring {
     private int expandFromTheCenter(String s, int left, int right) {
