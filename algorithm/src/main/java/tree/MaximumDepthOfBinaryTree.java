@@ -1,6 +1,6 @@
 package main.java.tree;
 
-import tree.common.TreeNode;
+import main.java.tree.common.TreeNode;
 
 /**
  * 104. Maximum Depth of Binary Tree

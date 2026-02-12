@@ -1,4 +1,4 @@
-package string.permutation_in_string;
+package main.java.string.permutation_in_string;
 
 /**
  * Given two strings s1 and s2, write a function to return true if s2 contains the permutation of s1.

@@ -1,4 +1,4 @@
-package minimum.cost;
+package main.java.minimum.cost;
 
 import java.util.PriorityQueue;
 import java.util.Queue;

@@ -29,7 +29,7 @@ public class LongestPalindromicSubstring {
     }
 
     public static void main(String... strings) {
-        String str = "cbbd";
+        String str = "babad";
         System.out.println(new LongestPalindromicSubstring().longestPalindrome(str));
     }
 }

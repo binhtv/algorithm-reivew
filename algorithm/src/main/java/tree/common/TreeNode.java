@@ -1,4 +1,4 @@
-package tree.common;
+package main.java.tree.common;
 
 import lombok.Getter;
 import lombok.Setter;

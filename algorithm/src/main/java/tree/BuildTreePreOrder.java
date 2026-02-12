@@ -1,6 +1,6 @@
 package main.java.tree;
 
-import tree.common.TreeNode;
+import main.java.tree.common.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

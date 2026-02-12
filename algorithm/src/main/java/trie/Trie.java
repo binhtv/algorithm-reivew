@@ -1,4 +1,4 @@
-package trie;
+package main.java.trie;
 
 import java.util.Arrays;
 
