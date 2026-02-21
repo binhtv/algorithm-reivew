@@ -1,4 +1,4 @@
-package main.java.most.visited.website;
+package most.visited.website;
 
 import java.util.*;
 

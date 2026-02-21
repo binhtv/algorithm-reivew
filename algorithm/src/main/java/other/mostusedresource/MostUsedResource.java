@@ -1,4 +1,4 @@
-package main.java.other.mostusedresource;
+package other.mostusedresource;
 
 import java.util.*;
 

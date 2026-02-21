@@ -1,4 +1,4 @@
-package main.java.other.amazonwarehouse;
+package other.amazonwarehouse;
 
 import java.util.*;
 import java.util.concurrent.ExecutorService;

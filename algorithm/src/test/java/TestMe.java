@@ -1,4 +1,4 @@
-package test.java;
+// Test package - files in src/test/java root directory
 
 import lombok.NonNull;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestMe {
     @Test
     public void testme() {
-        sum(null, 1);
+        sum(1, 2);
     }
 
     private int sum(@NonNull Integer a, @NonNull Integer b) {

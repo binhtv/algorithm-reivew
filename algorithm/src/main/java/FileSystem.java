@@ -1,4 +1,4 @@
-package main.java;
+// Default package - files in src/main/java root directory
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

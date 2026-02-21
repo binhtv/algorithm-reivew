@@ -1,6 +1,6 @@
-package main.java.graph;
+package graph;
 
-import main.java.tree.common.TreeNode;
+import tree.common.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

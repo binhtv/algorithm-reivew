@@ -1,6 +1,6 @@
-package test.java.find.union;
+package find.union;
 
-import main.java.find.union.FindUnionOptimized;
+import find.union.FindUnionOptimized;
 import org.junit.Test;
 
 public class FindUnionOptimizedTest {

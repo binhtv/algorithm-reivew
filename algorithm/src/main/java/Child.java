@@ -1,5 +1,4 @@
-package main.java;
-
+// Default package - no package declaration needed for files in src/main/java root
 
 public class Child extends FileSystem {
     public static void staticFunction() {

@@ -1,4 +1,4 @@
-package main.java.treasure.island;
+package treasure.island;
 
 import java.util.ArrayDeque;
 import java.util.LinkedList;

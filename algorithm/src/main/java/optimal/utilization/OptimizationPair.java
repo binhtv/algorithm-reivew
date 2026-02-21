@@ -1,4 +1,4 @@
-package main.java.optimal.utilization;
+package optimal.utilization;
 
 import java.util.ArrayList;
 import java.util.Arrays;

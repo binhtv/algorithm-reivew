@@ -1,6 +1,6 @@
-package main.java.twopointers;
+package twopointers;
 
-import main.java.utils.Utils;
+import utils.Utils;
 
 /**
  * Given an array, rotate the array to the right by k steps, where k is non-negative.

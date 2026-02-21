@@ -1,4 +1,4 @@
-package main.java.string.permutation;
+package string.permutation;
 
 public class Permutation {
     static void permutate(String str, String pref) {

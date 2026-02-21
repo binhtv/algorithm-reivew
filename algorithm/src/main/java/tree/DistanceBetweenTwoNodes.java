@@ -1,4 +1,4 @@
-package main.java.tree;
+package tree;
 
 public class DistanceBetweenTwoNodes {
     public static int distanceBtwTwoNodes(BST bst, int node1, int node2) {

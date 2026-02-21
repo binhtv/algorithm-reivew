@@ -1,9 +1,9 @@
-package test.java.string;
+package string;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
-import static main.java.string.LongestSubstrWithoutRepeatingChar.lengthOfLongestSubstring;
+import static string.LongestSubstrWithoutRepeatingChar.lengthOfLongestSubstring;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class LongestSubstrWithoutRepeatingCharTest {

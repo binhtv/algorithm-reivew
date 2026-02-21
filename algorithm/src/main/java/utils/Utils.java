@@ -1,4 +1,4 @@
-package main.java.utils;
+package utils;
 
 public class Utils {
     public static final void printArray(int[] arr) {

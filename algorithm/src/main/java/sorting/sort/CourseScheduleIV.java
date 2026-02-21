@@ -1,4 +1,4 @@
-package main.java.sorting.sort;
+package sorting.sort;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

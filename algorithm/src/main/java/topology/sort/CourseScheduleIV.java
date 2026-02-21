@@ -1,4 +1,4 @@
-package main.java.topology.sort;
+package topology.sort;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

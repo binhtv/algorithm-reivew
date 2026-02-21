@@ -1,4 +1,4 @@
-package main.java.bit;
+package bit;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;

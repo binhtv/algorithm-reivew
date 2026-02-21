@@ -1,4 +1,4 @@
-package main.java.other.amazonwarehouse;
+package other.amazonwarehouse;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

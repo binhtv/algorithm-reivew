@@ -1,4 +1,4 @@
-package main.java.string.anagrams;
+package string.anagrams;
 
 import java.util.*;
 

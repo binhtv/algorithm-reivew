@@ -1,4 +1,4 @@
-package main.java.string.partition_labels;
+package string.partition_labels;
 
 import java.util.ArrayList;
 import java.util.List;

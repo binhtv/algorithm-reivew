@@ -1,4 +1,4 @@
-package main.java.find.union;
+package find.union;
 
 import java.util.*;
 
